@@ -7,15 +7,15 @@ const reviews = [{
     },
     {
         id: 2,
-        name: "Jonn Doe",
-        job: "Engineer",
+        name: "Jane Doe",
+        job: "Doctor",
         img: "1.jpeg",
         text: "loream Ipsum jajdasjdhasjdhajdhajhd."
     },
     {
         id: 3,
         name: "Johnson Doe",
-        job: "Engineer",
+        job: "Pilot",
         img: "1.jpeg",
         text: "loream Ipsum jajdasjdhasjdhajdhajhd."
     }
@@ -44,3 +44,8 @@ function showPerson(person) {
     job.textContent = item.job;
     info.textContent = item.text;
 }
+
+nextBtn.addEventListener('click', function() {
+    currentItem++;
+    showPerson(currentItem);
+})
