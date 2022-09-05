@@ -34,11 +34,11 @@ const randomBtn = document.querySelector('.random-btn');
 let currentItem = 0;
 
 window.addEventListener("DOMContentLoaded", function() {
-    showPerson(currentItem);
+    showPerson();
 });
 
-function showPerson(person) {
-    const item = reviews[person];
+function showPerson() {
+    const item = reviews[currentItem];
     img.src = item.img;
     author.textContent = item.name;
     job.textContent = item.job;
@@ -50,7 +50,7 @@ nextBtn.addEventListener('click', function() {
     if (currentItem > reviews.length - 1) {
         currentItem = 0;
     }
-    showPerson(currentItem);
+    showPerson();
 });
 
 preBtn.addEventListener('click', function() {
@@ -61,3 +61,8 @@ preBtn.addEventListener('click', function() {
 
     showPerson(currentItem);
 });
+
+randomBtn.addEventListener('click', function() {
+    currentItem = Math.floor(Math.random() * reviews.length);
+    showPerson();
+})
